@@ -1,0 +1,102 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TimeLineElement from "../components/cv/TimeLine.astro";
+---
+
+<BaseLayout title="Resume" sideBarActiveItemID="cv">
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Profile</div>
+  </div>
+
+  <div class="mb-10 text-justify">
+    Software Engineering student at SMKN 4 Malang with a strong focus on modern Web & Mobile development, and an avid Cybersecurity / CTF competitor known online as <b>SiapaHeker</b>. 2x consecutive Grand Finalist in Jatim Cybersecurity Competition (JCC 2025 & JCC 2026). Skilled in JavaScript, TypeScript, Flutter/Dart, PHP, and Linux environments with practical experience building deployed web apps (TanamanKu) and cultural mobile apps (SwaraNusa). Proven track record in solving 124+ challenges on CyLab Security Academy, competing in picoCTF 2026, and publishing technical writeups on Medium.
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Education</div>
+  </div>
+
+  <div class="time-line-container grid gap-4 mb-10">
+    <TimeLineElement
+      title="Software Engineering (Rekayasa Perangkat Lunak)"
+      subtitle="2023 to Present at SMKN 4 Malang, East Java, Indonesia"
+    />
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Experience</div>
+  </div>
+
+  <div class="time-line-container mb-10">
+    <TimeLineElement
+      title="Web & Mobile Developer (Project Lead & Author)"
+      subtitle="From 2024 to Present at TanamanKu & SwaraNusa Projects, Malang, Indonesia"
+    >
+      Architected and developed TanamanKu (tanamanku.web.id) using TypeScript and Next.js. Engineered the SwaraNusa cultural ecosystem featuring an interactive web application and a cross-platform Flutter quiz mobile application with 3 interactive game modes.
+    </TimeLineElement>
+    <TimeLineElement
+      title="Security Researcher & CTF Competitor (SiapaHeker)"
+      subtitle="From 2024 to Present on CyLab Security Academy, TryHackMe & picoCTF"
+    >
+      Solved 124+ challenges on CyLab Security Academy across Web Exploitation (35), General Skills (33), Reverse Engineering (19), Forensics (15), Cryptography (11), Binary Exploitation (6), and AI (4). Achieved 3,350 points (Rank 1,621) in picoCTF 2026.
+    </TimeLineElement>
+    <TimeLineElement
+      title="Technical Writer & CTF Documentation"
+      subtitle="From 2024 to Present on Medium (@siapaheker) & GitHub"
+    >
+      Authored in-depth technical writeups on binary exploitation (PIE addresses, memory layout with pwndbg), web security (Server-Side Template Injection, SSL SAN subdomain enumeration), and reverse engineering.
+    </TimeLineElement>
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Certifications & Achievements</div>
+  </div>
+
+  <ul class="list-disc mx-6 mb-10 grid gap-2">
+    <li>
+      <b>Jatim Cybersecurity Competition (JCC) 2026 — Diskominfo Jatim</b>: Grand Finalist (Top 40 Finalist Teams out of 403 teams / 159 schools across East Java)
+    </li>
+    <li>
+      <b>Jatim Cybersecurity Competition (JCC) 2025 — Diskominfo Jatim</b>: Grand Finalist (Offline Grand Finals Qualifier at Malang Creative Center)
+    </li>
+    <li>
+      <a href="https://learn.cylabacademy.org/users/SiapaHeker" target="_blank">CyLab Security Academy — 124 Solved Challenges (Web, Forensics, Reverse, Crypto)</a>
+    </li>
+    <li>
+      <a href="https://learn.cylabacademy.org/users/SiapaHeker" target="_blank">picoCTF 2026 — Competitor (Score: 3,350 | Rank: 1,621)</a>
+    </li>
+    <li>
+      <a href="https://tryhackme.com/p/SiapaHeker" target="_blank">TryHackMe — CTF Player & Lab Rooms Solved (TakeOver, Compiled, etc.)</a>
+    </li>
+    <li>
+      <a href="https://github.com/NarCobahtml/PostgreSQL-submit" target="_blank">freeCodeCamp Relational Database / PostgreSQL</a>
+    </li>
+  </ul>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Skills</div>
+  </div>
+
+  <ul class="list-disc md:columns-5 columns-2 mx-6">
+    <li>TypeScript</li>
+    <li>JavaScript</li>
+    <li>Flutter & Dart</li>
+    <li>Next.js & React</li>
+    <li>HTML5 & CSS3</li>
+    <li>TailwindCSS</li>
+    <li>PHP & MySQL</li>
+    <li>Prisma ORM</li>
+    <li>Linux / Kali</li>
+    <li>Git & GitHub</li>
+    <li>Burp Suite</li>
+    <li>Wireshark</li>
+    <li>pwndbg / GDB</li>
+    <li>Web Exploitation</li>
+    <li>Reverse Engineering</li>
+    <li>Cryptography</li>
+    <li>Forensics</li>
+    <li>OSINT</li>
+    <li>ffuf / Gobuster</li>
+    <li>Technical Writing</li>
+  </ul>
+</BaseLayout>
