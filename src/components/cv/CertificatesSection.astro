@@ -12,41 +12,41 @@ interface Certificate {
   description: string;
 }
 
-// Urutkan berdasarkan waktu terbaru (Reverse Chronological: 2026 terbaru -> 2025)
+// Ordered reverse-chronologically (newest first: late 2026 -> 2025)
 const certificates: Certificate[] = [
   {
     id: "jcc-2026",
     title: "Jatim Cybersecurity Competition (JCC) 2026",
-    issuer: "Diskominfo Provinsi Jawa Timur",
+    issuer: "Diskominfo East Java Province",
     role: "Grand Finalist (Top 40 Finalist Teams out of 403 teams / 159 schools across East Java)",
     badge: "Grand Finalist",
     badgeColor: "badge-primary",
-    date: "Oktober 2026",
-    image: "/certificates/jcc-finalist-cert.webp",
-    description: "Lolos babak penyisihan jeopardy sebagai Top 40 Finalis dari total 403 tim se-Jawa Timur, lalu bertanding di babak Grand Final luring di Surabaya dengan format Attack-Defense CTF.",
+    date: "October 2026",
+    image: "/certificates/jcc-2026-placeholder.webp",
+    description: "Qualified from the Jeopardy-style preliminary round as a Top 40 Finalist out of 403 teams (159 schools across East Java), advancing to the offline Attack-Defense CTF Grand Finals in Surabaya.",
   },
   {
     id: "code-challenge-telkom-2026",
-    title: "Kompetisi Nasional CODE CHALLENGE CTF 2026",
+    title: "National CODE CHALLENGE CTF Competition 2026",
     issuer: "HIMATISI Telkom University Surabaya",
-    role: "Peserta Nasional Jenjang SMA/SMK",
+    role: "High School / Vocational Level Participant",
     badge: "National CTF",
     badgeColor: "badge-accent",
-    date: "6 Juli – 25 Oktober 2026",
+    date: "July 6 – October 25, 2026",
     credentialId: "222/SIS/HIMATISI-TUS/XI/2026",
     image: "/certificates/code-challenge-telkom-2026.webp",
-    description: "Berkompetisi dalam ajang kompetisi nasional Code Challenge bidang Capture The Flag (CTF) jenjang SMA/SMK yang diselenggarakan oleh Himpunan Mahasiswa Teknologi Informasi Telkom University Surabaya.",
+    description: "Competed in the national Code Challenge Capture The Flag (CTF) competition for high school and vocational students organized by the Information Technology Student Association (HIMATISI) at Telkom University Surabaya.",
   },
   {
     id: "kapolri-cup-2026",
     title: "Polri CTF — Esports Kapolri Cup 2026",
-    issuer: "Kepolisian Negara Republik Indonesia (POLRI)",
-    role: "Peserta Kompetisi CTF",
+    issuer: "Indonesian National Police (POLRI)",
+    role: "CTF Competition Participant",
     badge: "National CTF",
     badgeColor: "badge-secondary",
-    date: "8–9 Agustus 2026",
+    date: "August 8–9, 2026",
     image: "/certificates/kapolri-cup-2026.webp",
-    description: "Sertifikat penghargaan atas partisipasi aktif sebagai peserta dalam kompetisi nasional Capture The Flag (CTF) Esports Kapolri Cup 2026: Dream to Become.",
+    description: "Certificate of appreciation for active participation in the national Capture The Flag (CTF) competition during Esports Kapolri Cup 2026: Dream to Become.",
   },
   {
     id: "zero-day-ctf-2026",
@@ -55,50 +55,51 @@ const certificates: Certificate[] = [
     role: "Scholar Battle Cluster Participant",
     badge: "CTF Competition",
     badgeColor: "badge-secondary",
-    date: "7 Juli 2026",
+    date: "July 7, 2026",
     image: "/certificates/zero-day-ctf-2026.webp",
-    description: "Sertifikat partisipasi aktif dan keterlibatan antusias dalam ajang kompetisi Capture The Flag (CTF): ZERO DAY 2026 cluster pelajar/scholar.",
+    description: "Certificate of Scholar Battle Cluster Participation for active engagement and enthusiasm during the Capture The Flag (CTF) Competition: ZERO DAY 2026.",
   },
   {
     id: "cbd-regional-2026",
     title: "Cyber Breaker Development (CBD) Regional — Break The Limit",
     issuer: "Satria Siber Nusantara & Peris.ai",
-    role: "Peserta (Team: Sembarang Wes - 2, SiapaHeker)",
+    role: "Participant (Team: Sembarang Wes - 2 / SiapaHeker)",
     badge: "Cybersecurity Workshop",
     badgeColor: "badge-warning",
-    date: "2–3 Mei 2026",
+    date: "May 2–3, 2026",
     credentialId: "424/EXT/CBD-REGIONAL/PRS/VIII/2026",
     image: "/certificates/cbd-regional.webp",
-    description: "Partisipasi aktif dalam workshop dan kompetisi Cyber Breaker Development Regional yang diadakan oleh Cyber Breaker didukung oleh Satria Siber Nusantara & Peris.ai.",
+    description: "Attended and actively participated in the Cyber Breaker Development Regional workshop and CTF competition hosted by Cyber Breaker, powered by Satria Siber Nusantara & Peris.ai.",
   },
   {
     id: "ara-7-its",
-    title: "Olimpiade IT ARA 7.0 (A Renewal Agent 7.0)",
+    title: "IT Olympiad ARA 7.0 (A Renewal Agent 7.0)",
     issuer: "HMIT FTEIC, Institut Teknologi Sepuluh Nopember (ITS)",
-    role: "Peserta Olimpiade IT Nasional",
-    badge: "Olimpiade IT",
+    role: "National IT Olympiad Participant",
+    badge: "IT Olympiad",
     badgeColor: "badge-info",
-    date: "4–24 Januari 2026",
+    date: "January 4–24, 2026",
     credentialId: "137/SER/ARA/RISTEK/HMIT-ITS/I/2026",
     image: "/certificates/ara-7-its.webp",
-    description: "Sertifikat penghargaan sebagai peserta Olimpiade IT ARA 7.0 tingkat nasional yang diselenggarakan oleh Himpunan Mahasiswa Teknologi Informasi FTEIC ITS Surabaya.",
+    description: "Certificate of appreciation as a participant in the national IT Olympiad ARA 7.0 organized by the Department of Information Technology Student Association (HMIT) FTEIC ITS Surabaya.",
   },
   {
     id: "jcc-2025",
     title: "Jatim Cybersecurity Competition (JCC) 2025",
-    issuer: "Diskominfo Provinsi Jawa Timur",
+    issuer: "Diskominfo East Java Province",
     role: "Grand Finalist (Offline Grand Finals Qualifier at Malang Creative Center)",
     badge: "Grand Finalist",
     badgeColor: "badge-primary",
-    date: "Oktober 2025",
-    image: "/certificates/jcc-2025-placeholder.webp",
-    description: "Lolos seleksi babak penyisihan provinsi sebagai Top 40 Finalis dari 158 tim se-Jawa Timur, lalu berkompetisi di babak Grand Final luring di Malang Creative Center (MCC).",
+    date: "October 2025",
+    credentialId: "000.6.4.1/1126.63/114.5/2025",
+    image: "/certificates/jcc-2025-finalist.webp",
+    description: "Qualified from the provincial preliminary selection round as a Top 40 Finalist out of 158 teams across East Java, competing in the offline Grand Finals at Malang Creative Center (MCC).",
   },
 ];
 ---
 
 <div class="relative w-full">
-  <!-- Timeline Container identik dengan Experience & Education -->
+  <!-- Timeline Container identical to Experience & Education -->
   <div class="time-line-container mb-10" id="certificate-timeline">
     {
       certificates.map((cert) => (
@@ -112,7 +113,7 @@ const certificates: Certificate[] = [
           data-id={cert.id}
           data-cred={cert.credentialId || ""}
         >
-          <!-- Timeline Indicator Garis & Bulatan (Identik dengan TimeLine.astro) -->
+          <!-- Timeline Indicator Line & Dot (Identical to TimeLine.astro) -->
           <div class="education__time">
             <span class="w-4 h-4 bg-primary block rounded-full mt-1.5 transition-transform duration-300 group-hover:scale-125 group-hover:shadow-[0_0_12px_rgba(var(--p),0.8)]"></span>
             <span class="education__line bg-primary block h-full w-[2px] translate-x-[7px]"></span>
@@ -183,7 +184,7 @@ const certificates: Certificate[] = [
                 <polyline points="15 3 21 3 21 9"></polyline>
                 <line x1="10" y1="14" x2="21" y2="3"></line>
               </svg>
-              Buka Gambar Penuh
+              Open Full Image
             </a>
           </div>
         </div>
@@ -324,8 +325,8 @@ const certificates: Certificate[] = [
         modalImg.src = imgUrl;
         if (modalTitle) modalTitle.textContent = title;
         if (modalSubtitle) modalSubtitle.textContent = `${role} — ${issuer}`;
-        if (modalDate) modalDate.textContent = `Tanggal / Periode: ${date}`;
-        if (modalCred) modalCred.textContent = cred ? `No. Sertifikat: ${cred}` : "";
+        if (modalDate) modalDate.textContent = `Date / Period: ${date}`;
+        if (modalCred) modalCred.textContent = cred ? `Certificate No: ${cred}` : "";
         if (modalOpenLink) modalOpenLink.href = imgUrl;
         modal.showModal();
       });
