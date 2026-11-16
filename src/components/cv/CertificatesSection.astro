@@ -4,7 +4,7 @@ interface Certificate {
   title: string;
   issuer: string;
   role: string;
-  badge: string;
+  badge?: string;
   badgeColor?: string;
   date: string;
   credentialId?: string;
@@ -12,34 +12,36 @@ interface Certificate {
   description: string;
 }
 
+// Urutkan berdasarkan waktu terbaru (Reverse Chronological: 2026 terbaru -> 2025)
 const certificates: Certificate[] = [
   {
     id: "jcc-2026",
     title: "Jatim Cybersecurity Competition (JCC) 2026",
     issuer: "Diskominfo Provinsi Jawa Timur",
-    role: "Grand Finalist (Top 40 dari 403 Tim se-Jatim)",
+    role: "Grand Finalist (Top 40 Finalist Teams out of 403 teams / 159 schools across East Java)",
     badge: "Grand Finalist",
     badgeColor: "badge-primary",
-    date: "2026",
-    image: "/certificates/jcc-finalist.webp",
-    description: "Lolos babak penyisihan jeopardy sebagai Top 40 Finalis dari 403 tim (159 sekolah se-Jawa Timur) dan melaju ke babak Grand Final luring di Surabaya dengan format Attack-Defense CTF.",
+    date: "Oktober 2026",
+    image: "/certificates/jcc-finalist-cert.webp",
+    description: "Lolos babak penyisihan jeopardy sebagai Top 40 Finalis dari total 403 tim se-Jawa Timur, lalu bertanding di babak Grand Final luring di Surabaya dengan format Attack-Defense CTF.",
   },
   {
-    id: "jcc-2025",
-    title: "Jatim Cybersecurity Competition (JCC) 2025",
-    issuer: "Diskominfo Provinsi Jawa Timur",
-    role: "Grand Finalist (Top 40 dari 158 Tim se-Jatim)",
-    badge: "Grand Finalist",
-    badgeColor: "badge-primary",
-    date: "2025",
-    image: "/certificates/jcc-finalist.webp",
-    description: "Lolos seleksi babak penyisihan provinsi sebagai Top 40 Finalis dari 158 tim se-Jawa Timur, lalu berkompetisi di babak Grand Final luring di Malang Creative Center (MCC).",
+    id: "code-challenge-telkom-2026",
+    title: "Kompetisi Nasional CODE CHALLENGE CTF 2026",
+    issuer: "HIMATISI Telkom University Surabaya",
+    role: "Peserta Nasional Jenjang SMA/SMK",
+    badge: "National CTF",
+    badgeColor: "badge-accent",
+    date: "6 Juli – 25 Oktober 2026",
+    credentialId: "222/SIS/HIMATISI-TUS/XI/2026",
+    image: "/certificates/code-challenge-telkom-2026.webp",
+    description: "Berkompetisi dalam ajang kompetisi nasional Code Challenge bidang Capture The Flag (CTF) jenjang SMA/SMK yang diselenggarakan oleh Himpunan Mahasiswa Teknologi Informasi Telkom University Surabaya.",
   },
   {
     id: "kapolri-cup-2026",
     title: "Polri CTF — Esports Kapolri Cup 2026",
     issuer: "Kepolisian Negara Republik Indonesia (POLRI)",
-    role: "Peserta (Participant)",
+    role: "Peserta Kompetisi CTF",
     badge: "National CTF",
     badgeColor: "badge-secondary",
     date: "8–9 Agustus 2026",
@@ -47,62 +49,61 @@ const certificates: Certificate[] = [
     description: "Sertifikat penghargaan atas partisipasi aktif sebagai peserta dalam kompetisi nasional Capture The Flag (CTF) Esports Kapolri Cup 2026: Dream to Become.",
   },
   {
-    id: "code-challenge-telkom-2026",
-    title: "Kompetisi Nasional CODE CHALLENGE CTF 2026",
-    issuer: "HIMATISI Telkom University Surabaya",
-    role: "Peserta Jenjang SMA/SMK",
-    badge: "National CTF",
-    badgeColor: "badge-accent",
-    date: "6 Juli – 25 Oktober 2026",
-    credentialId: "222/SIS/HIMATISI-TUS/XI/2026",
-    image: "/certificates/code-challenge-telkom-2026.webp",
-    description: "Berkompetisi dalam ajang kompetisi nasional Code Challenge bidang Capture The Flag (CTF) jenjang SMA/SMK yang diselenggarakan oleh Himpunan Mahasiswa Teknologi Informasi (HIMATISI) Telkom University Surabaya.",
-  },
-  {
-    id: "ara-7-its",
-    title: "Olimpiade IT ARA 7.0 (A Renewal Agent 7.0)",
-    issuer: "HMIT Departemen Teknologi Informasi, Institut Teknologi Sepuluh Nopember (ITS)",
-    role: "Peserta Olimpiade IT",
-    badge: "Olimpiade IT",
-    badgeColor: "badge-info",
-    date: "4–24 Januari 2026",
-    credentialId: "137/SER/ARA/RISTEK/HMIT-ITS/I/2026",
-    image: "/certificates/ara-7-its.webp",
-    description: "Sertifikat penghargaan sebagai peserta Olimpiade IT ARA 7.0 tingkat nasional yang diselenggarakan oleh Departemen Teknologi Informasi FTEIC ITS Surabaya.",
-  },
-  {
-    id: "cbd-regional-2026",
-    title: "Cyber Breaker Development (CBD) Regional — Break The Limit",
-    issuer: "Satria Siber Nusantara & Peris.ai",
-    role: "Peserta (Team Sembarang Wes - 2 / SiapaHeker)",
-    badge: "Cybersecurity Workshop",
-    badgeColor: "badge-warning",
-    date: "2–3 Mei 2026",
-    credentialId: "424/EXT/CBD-REGIONAL/PRS/VIII/2026",
-    image: "/certificates/cbd-regional.webp",
-    description: "Partisipasi aktif dalam kegiatan Cyber Breaker Development Regional yang diadakan oleh Cyber Breaker dan didukung oleh Satria Siber Nusantara & Peris.ai.",
-  },
-  {
     id: "zero-day-ctf-2026",
     title: "Capture The Flag (CTF) Competition: ZERO DAY 2026",
-    issuer: "PT Digital Solusi Grup (DSG) & Diskominfo Jatim, Filkom UB, DIKST",
+    issuer: "PT Digital Solusi Grup (DSG), Kominfo Jatim, DIKST & FILKOM UB",
     role: "Scholar Battle Cluster Participant",
     badge: "CTF Competition",
     badgeColor: "badge-secondary",
     date: "7 Juli 2026",
     image: "/certificates/zero-day-ctf-2026.webp",
-    description: "Sertifikat partisipasi aktif dan engagement antusias dalam ajang kompetisi Capture The Flag (CTF): ZERO DAY 2026 kategori Scholar Battle Cluster.",
+    description: "Sertifikat partisipasi aktif dan keterlibatan antusias dalam ajang kompetisi Capture The Flag (CTF): ZERO DAY 2026 cluster pelajar/scholar.",
+  },
+  {
+    id: "cbd-regional-2026",
+    title: "Cyber Breaker Development (CBD) Regional — Break The Limit",
+    issuer: "Satria Siber Nusantara & Peris.ai",
+    role: "Peserta (Team: Sembarang Wes - 2, SiapaHeker)",
+    badge: "Cybersecurity Workshop",
+    badgeColor: "badge-warning",
+    date: "2–3 Mei 2026",
+    credentialId: "424/EXT/CBD-REGIONAL/PRS/VIII/2026",
+    image: "/certificates/cbd-regional.webp",
+    description: "Partisipasi aktif dalam workshop dan kompetisi Cyber Breaker Development Regional yang diadakan oleh Cyber Breaker didukung oleh Satria Siber Nusantara & Peris.ai.",
+  },
+  {
+    id: "ara-7-its",
+    title: "Olimpiade IT ARA 7.0 (A Renewal Agent 7.0)",
+    issuer: "HMIT FTEIC, Institut Teknologi Sepuluh Nopember (ITS)",
+    role: "Peserta Olimpiade IT Nasional",
+    badge: "Olimpiade IT",
+    badgeColor: "badge-info",
+    date: "4–24 Januari 2026",
+    credentialId: "137/SER/ARA/RISTEK/HMIT-ITS/I/2026",
+    image: "/certificates/ara-7-its.webp",
+    description: "Sertifikat penghargaan sebagai peserta Olimpiade IT ARA 7.0 tingkat nasional yang diselenggarakan oleh Himpunan Mahasiswa Teknologi Informasi FTEIC ITS Surabaya.",
+  },
+  {
+    id: "jcc-2025",
+    title: "Jatim Cybersecurity Competition (JCC) 2025",
+    issuer: "Diskominfo Provinsi Jawa Timur",
+    role: "Grand Finalist (Offline Grand Finals Qualifier at Malang Creative Center)",
+    badge: "Grand Finalist",
+    badgeColor: "badge-primary",
+    date: "Oktober 2025",
+    image: "/certificates/jcc-2025-placeholder.webp",
+    description: "Lolos seleksi babak penyisihan provinsi sebagai Top 40 Finalis dari 158 tim se-Jawa Timur, lalu berkompetisi di babak Grand Final luring di Malang Creative Center (MCC).",
   },
 ];
 ---
 
 <div class="relative w-full">
-  <!-- Interactive Certificate List -->
-  <div class="grid gap-4 mb-10" id="certificate-list">
+  <!-- Timeline Container identik dengan Experience & Education -->
+  <div class="time-line-container mb-10" id="certificate-timeline">
     {
       certificates.map((cert) => (
         <div
-          class="cert-item group relative flex flex-col md:flex-row md:items-center justify-between p-4 rounded-xl border border-base-300 bg-base-100 hover:bg-base-200/80 hover:border-primary/50 transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md"
+          class="cert-item group flex cursor-pointer transition-colors duration-200"
           data-title={cert.title}
           data-issuer={cert.issuer}
           data-role={cert.role}
@@ -111,38 +112,42 @@ const certificates: Certificate[] = [
           data-id={cert.id}
           data-cred={cert.credentialId || ""}
         >
-          <div class="flex-1 pr-0 md:pr-4">
-            <div class="flex flex-wrap items-center gap-2 mb-1.5">
-              <span class={`badge ${cert.badgeColor || "badge-primary"} badge-sm font-semibold`}>
-                {cert.badge}
-              </span>
-              <span class="text-xs opacity-60 font-mono">{cert.date}</span>
-              {cert.credentialId && (
-                <span class="text-xs opacity-50 hidden sm:inline font-mono">
-                  No: {cert.credentialId}
-                </span>
-              )}
-            </div>
-            <h3 class="text-base sm:text-lg font-bold text-base-content group-hover:text-primary transition-colors">
-              {cert.title}
-            </h3>
-            <p class="text-xs sm:text-sm text-base-content/80 font-medium mt-0.5">
-              <span class="text-primary font-semibold">{cert.role}</span> — {cert.issuer}
-            </p>
-            <p class="text-xs text-base-content/65 mt-1.5 leading-relaxed">
-              {cert.description}
-            </p>
+          <!-- Timeline Indicator Garis & Bulatan (Identik dengan TimeLine.astro) -->
+          <div class="education__time">
+            <span class="w-4 h-4 bg-primary block rounded-full mt-1.5 transition-transform duration-300 group-hover:scale-125 group-hover:shadow-[0_0_12px_rgba(var(--p),0.8)]"></span>
+            <span class="education__line bg-primary block h-full w-[2px] translate-x-[7px]"></span>
           </div>
 
-          <!-- Preview Action Indicator -->
-          <div class="mt-3 md:mt-0 flex items-center gap-2 self-start md:self-center shrink-0">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-base-300/70 text-base-content/80 group-hover:bg-primary group-hover:text-primary-content transition-all duration-200">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
-                <circle cx="12" cy="12" r="3" />
-              </svg>
-              <span>Preview</span>
-            </span>
+          <!-- Timeline Content Data -->
+          <div class="experience__data bd-grid px-5 pb-7 flex-1">
+            <div class="flex flex-wrap items-center gap-2 mb-1">
+              <h3 class="font-semibold text-lg text-base-content group-hover:text-primary transition-colors flex items-center gap-2">
+                <span>{cert.title}</span>
+                <span class="opacity-0 group-hover:opacity-100 transition-opacity text-primary text-xs font-normal">
+                  (Lihat Sertifikat ↗)
+                </span>
+              </h3>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm mb-1.5">
+              <span class="font-medium text-primary">{cert.role}</span>
+              <span class="opacity-40">•</span>
+              <span class="font-light text-base-content/80">{cert.issuer}</span>
+              <span class="opacity-40">•</span>
+              <span class="font-mono text-xs text-base-content/60">{cert.date}</span>
+              {cert.credentialId && (
+                <>
+                  <span class="opacity-40 hidden sm:inline">•</span>
+                  <span class="text-xs opacity-50 hidden sm:inline font-mono">
+                    No: {cert.credentialId}
+                  </span>
+                </>
+              )}
+            </div>
+
+            <p class="my-1 text-justify text-sm text-base-content/75 leading-relaxed">
+              {cert.description}
+            </p>
           </div>
         </div>
       ))
@@ -161,7 +166,7 @@ const certificates: Certificate[] = [
           id="cert-hover-img"
           src=""
           alt="Certificate Preview"
-          class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+          class="w-full h-full object-contain transition-transform duration-300"
           loading="eager"
         />
         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
