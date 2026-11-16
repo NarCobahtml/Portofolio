@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TimeLineElement from "../components/cv/TimeLine.astro";
+import CertificatesSection from "../components/cv/CertificatesSection.astro";
 ---
 
 <BaseLayout title="Resume" sideBarActiveItemID="cv">
@@ -50,18 +51,12 @@ Software Engineering student at SMKN 4 Malang with a deep curiosity for both bui
     </TimeLineElement>
   </div>
 
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Certifications & Achievements</div>
+  <div class="mb-5 flex flex-wrap items-center justify-between gap-2">
+    <div class="text-3xl font-bold">Certifications & Achievements</div>
+    <span class="text-xs text-base-content/60 font-medium">✨ Arahkan kursor / klik untuk melihat preview sertifikat</span>
   </div>
 
-  <ul class="list-disc mx-6 mb-10 grid gap-2">
-    <li>
-      <b>Jatim Cybersecurity Competition (JCC) 2026 — Diskominfo Jatim</b>: Grand Finalist (Top 40 Finalist Teams out of 403 teams / 159 schools across East Java)
-    </li>
-    <li>
-      <b>Jatim Cybersecurity Competition (JCC) 2025 — Diskominfo Jatim</b>: Grand Finalist (Offline Grand Finals Qualifier at Malang Creative Center)
-    </li>
-  </ul>
+  <CertificatesSection />
 
   <div class="mb-5">
     <div class="text-3xl w-full font-bold">Skills</div>

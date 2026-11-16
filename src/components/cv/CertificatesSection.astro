@@ -1,0 +1,356 @@
+---
+interface Certificate {
+  id: string;
+  title: string;
+  issuer: string;
+  role: string;
+  badge: string;
+  badgeColor?: string;
+  date: string;
+  credentialId?: string;
+  image: string;
+  description: string;
+}
+
+const certificates: Certificate[] = [
+  {
+    id: "jcc-2026",
+    title: "Jatim Cybersecurity Competition (JCC) 2026",
+    issuer: "Diskominfo Provinsi Jawa Timur",
+    role: "Grand Finalist (Top 40 dari 403 Tim se-Jatim)",
+    badge: "Grand Finalist",
+    badgeColor: "badge-primary",
+    date: "2026",
+    image: "/certificates/jcc-finalist.webp",
+    description: "Lolos babak penyisihan jeopardy sebagai Top 40 Finalis dari 403 tim (159 sekolah se-Jawa Timur) dan melaju ke babak Grand Final luring di Surabaya dengan format Attack-Defense CTF.",
+  },
+  {
+    id: "jcc-2025",
+    title: "Jatim Cybersecurity Competition (JCC) 2025",
+    issuer: "Diskominfo Provinsi Jawa Timur",
+    role: "Grand Finalist (Top 40 dari 158 Tim se-Jatim)",
+    badge: "Grand Finalist",
+    badgeColor: "badge-primary",
+    date: "2025",
+    image: "/certificates/jcc-finalist.webp",
+    description: "Lolos seleksi babak penyisihan provinsi sebagai Top 40 Finalis dari 158 tim se-Jawa Timur, lalu berkompetisi di babak Grand Final luring di Malang Creative Center (MCC).",
+  },
+  {
+    id: "kapolri-cup-2026",
+    title: "Polri CTF — Esports Kapolri Cup 2026",
+    issuer: "Kepolisian Negara Republik Indonesia (POLRI)",
+    role: "Peserta (Participant)",
+    badge: "National CTF",
+    badgeColor: "badge-secondary",
+    date: "8–9 Agustus 2026",
+    image: "/certificates/kapolri-cup-2026.webp",
+    description: "Sertifikat penghargaan atas partisipasi aktif sebagai peserta dalam kompetisi nasional Capture The Flag (CTF) Esports Kapolri Cup 2026: Dream to Become.",
+  },
+  {
+    id: "code-challenge-telkom-2026",
+    title: "Kompetisi Nasional CODE CHALLENGE CTF 2026",
+    issuer: "HIMATISI Telkom University Surabaya",
+    role: "Peserta Jenjang SMA/SMK",
+    badge: "National CTF",
+    badgeColor: "badge-accent",
+    date: "6 Juli – 25 Oktober 2026",
+    credentialId: "222/SIS/HIMATISI-TUS/XI/2026",
+    image: "/certificates/code-challenge-telkom-2026.webp",
+    description: "Berkompetisi dalam ajang kompetisi nasional Code Challenge bidang Capture The Flag (CTF) jenjang SMA/SMK yang diselenggarakan oleh Himpunan Mahasiswa Teknologi Informasi (HIMATISI) Telkom University Surabaya.",
+  },
+  {
+    id: "ara-7-its",
+    title: "Olimpiade IT ARA 7.0 (A Renewal Agent 7.0)",
+    issuer: "HMIT Departemen Teknologi Informasi, Institut Teknologi Sepuluh Nopember (ITS)",
+    role: "Peserta Olimpiade IT",
+    badge: "Olimpiade IT",
+    badgeColor: "badge-info",
+    date: "4–24 Januari 2026",
+    credentialId: "137/SER/ARA/RISTEK/HMIT-ITS/I/2026",
+    image: "/certificates/ara-7-its.webp",
+    description: "Sertifikat penghargaan sebagai peserta Olimpiade IT ARA 7.0 tingkat nasional yang diselenggarakan oleh Departemen Teknologi Informasi FTEIC ITS Surabaya.",
+  },
+  {
+    id: "cbd-regional-2026",
+    title: "Cyber Breaker Development (CBD) Regional — Break The Limit",
+    issuer: "Satria Siber Nusantara & Peris.ai",
+    role: "Peserta (Team Sembarang Wes - 2 / SiapaHeker)",
+    badge: "Cybersecurity Workshop",
+    badgeColor: "badge-warning",
+    date: "2–3 Mei 2026",
+    credentialId: "424/EXT/CBD-REGIONAL/PRS/VIII/2026",
+    image: "/certificates/cbd-regional.webp",
+    description: "Partisipasi aktif dalam kegiatan Cyber Breaker Development Regional yang diadakan oleh Cyber Breaker dan didukung oleh Satria Siber Nusantara & Peris.ai.",
+  },
+  {
+    id: "zero-day-ctf-2026",
+    title: "Capture The Flag (CTF) Competition: ZERO DAY 2026",
+    issuer: "PT Digital Solusi Grup (DSG) & Diskominfo Jatim, Filkom UB, DIKST",
+    role: "Scholar Battle Cluster Participant",
+    badge: "CTF Competition",
+    badgeColor: "badge-secondary",
+    date: "7 Juli 2026",
+    image: "/certificates/zero-day-ctf-2026.webp",
+    description: "Sertifikat partisipasi aktif dan engagement antusias dalam ajang kompetisi Capture The Flag (CTF): ZERO DAY 2026 kategori Scholar Battle Cluster.",
+  },
+];
+---
+
+<div class="relative w-full">
+  <!-- Interactive Certificate List -->
+  <div class="grid gap-4 mb-10" id="certificate-list">
+    {
+      certificates.map((cert) => (
+        <div
+          class="cert-item group relative flex flex-col md:flex-row md:items-center justify-between p-4 rounded-xl border border-base-300 bg-base-100 hover:bg-base-200/80 hover:border-primary/50 transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md"
+          data-title={cert.title}
+          data-issuer={cert.issuer}
+          data-role={cert.role}
+          data-date={cert.date}
+          data-img={cert.image}
+          data-id={cert.id}
+          data-cred={cert.credentialId || ""}
+        >
+          <div class="flex-1 pr-0 md:pr-4">
+            <div class="flex flex-wrap items-center gap-2 mb-1.5">
+              <span class={`badge ${cert.badgeColor || "badge-primary"} badge-sm font-semibold`}>
+                {cert.badge}
+              </span>
+              <span class="text-xs opacity-60 font-mono">{cert.date}</span>
+              {cert.credentialId && (
+                <span class="text-xs opacity-50 hidden sm:inline font-mono">
+                  No: {cert.credentialId}
+                </span>
+              )}
+            </div>
+            <h3 class="text-base sm:text-lg font-bold text-base-content group-hover:text-primary transition-colors">
+              {cert.title}
+            </h3>
+            <p class="text-xs sm:text-sm text-base-content/80 font-medium mt-0.5">
+              <span class="text-primary font-semibold">{cert.role}</span> — {cert.issuer}
+            </p>
+            <p class="text-xs text-base-content/65 mt-1.5 leading-relaxed">
+              {cert.description}
+            </p>
+          </div>
+
+          <!-- Preview Action Indicator -->
+          <div class="mt-3 md:mt-0 flex items-center gap-2 self-start md:self-center shrink-0">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-base-300/70 text-base-content/80 group-hover:bg-primary group-hover:text-primary-content transition-all duration-200">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+              <span>Preview</span>
+            </span>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <!-- Floating Hover Preview Card (Smooth Mouse Follow on Desktop) -->
+  <div
+    id="cert-hover-preview"
+    class="pointer-events-none fixed top-0 left-0 z-50 opacity-0 scale-90 transition-all duration-300 ease-out will-change-transform shadow-2xl rounded-2xl overflow-hidden border border-primary/30 bg-base-200/95 backdrop-blur-md max-w-[340px] sm:max-w-[400px] hidden md:block"
+    style="transform: translate3d(-9999px, -9999px, 0);"
+  >
+    <div class="p-2.5">
+      <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-base-300 flex items-center justify-center border border-base-content/10">
+        <img
+          id="cert-hover-img"
+          src=""
+          alt="Certificate Preview"
+          class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
+        <span class="absolute bottom-2 right-2 text-[10px] tracking-wide text-white/90 bg-black/60 px-2 py-0.5 rounded-full backdrop-blur-xs font-mono">
+          Hover Preview
+        </span>
+      </div>
+      <div class="pt-2 px-1 pb-0.5">
+        <p id="cert-hover-title" class="text-xs font-bold text-base-content line-clamp-1"></p>
+        <p id="cert-hover-role" class="text-[11px] text-primary line-clamp-1 mt-0.5"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Lightbox (Click to View Full Screen) -->
+  <dialog id="cert-modal" class="modal modal-bottom sm:modal-middle backdrop-blur-sm">
+    <div class="modal-box max-w-4xl p-4 sm:p-6 bg-base-100 border border-base-300 shadow-2xl">
+      <form method="dialog">
+        <button class="btn btn-sm btn-circle btn-ghost absolute right-3 top-3 z-10 text-base-content">✕</button>
+      </form>
+      <div class="flex flex-col gap-3">
+        <div class="flex flex-wrap items-center justify-between gap-2 pr-8">
+          <div>
+            <h3 id="modal-title" class="text-lg sm:text-xl font-bold text-base-content"></h3>
+            <p id="modal-subtitle" class="text-xs sm:text-sm text-primary font-medium"></p>
+          </div>
+          <div class="flex items-center gap-2">
+            <a
+              id="modal-open-link"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-xs sm:btn-sm btn-outline gap-1.5"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+              Buka Gambar Penuh
+            </a>
+          </div>
+        </div>
+
+        <div class="w-full bg-base-200 rounded-xl overflow-hidden flex items-center justify-center p-2 sm:p-4 border border-base-300 min-h-[250px] max-h-[75vh]">
+          <img
+            id="modal-img"
+            src=""
+            alt="Certificate View"
+            class="max-h-[70vh] w-auto max-w-full object-contain rounded-lg shadow-md"
+          />
+        </div>
+
+        <div class="text-xs sm:text-sm text-base-content/75 flex flex-wrap items-center justify-between pt-1 border-t border-base-200">
+          <span id="modal-date"></span>
+          <span id="modal-cred" class="font-mono text-xs opacity-70"></span>
+        </div>
+      </div>
+    </div>
+    <form method="dialog" class="modal-backdrop bg-black/70">
+      <button>close</button>
+    </form>
+  </dialog>
+</div>
+
+<script>
+  function setupCertificates() {
+    const previewEl = document.getElementById("cert-hover-preview");
+    const previewImg = document.getElementById("cert-hover-img") as HTMLImageElement | null;
+    const previewTitle = document.getElementById("cert-hover-title");
+    const previewRole = document.getElementById("cert-hover-role");
+
+    const modal = document.getElementById("cert-modal") as HTMLDialogElement | null;
+    const modalImg = document.getElementById("modal-img") as HTMLImageElement | null;
+    const modalTitle = document.getElementById("modal-title");
+    const modalSubtitle = document.getElementById("modal-subtitle");
+    const modalDate = document.getElementById("modal-date");
+    const modalCred = document.getElementById("modal-cred");
+    const modalOpenLink = document.getElementById("modal-open-link") as HTMLAnchorElement | null;
+
+    const items = document.querySelectorAll<HTMLElement>(".cert-item");
+    if (!previewEl || items.length === 0) return;
+
+    let isHovering = false;
+    let targetX = 0;
+    let targetY = 0;
+    let currentX = 0;
+    let currentY = 0;
+    let animFrameId: number | null = null;
+
+    // Smooth lerp movement loop for floating preview
+    function updatePosition() {
+      if (isHovering) {
+        currentX += (targetX - currentX) * 0.22;
+        currentY += (targetY - currentY) * 0.22;
+        previewEl.style.transform = `translate3d(${Math.round(currentX)}px, ${Math.round(currentY)}px, 0)`;
+        animFrameId = requestAnimationFrame(updatePosition);
+      }
+    }
+
+    items.forEach((item) => {
+      const imgUrl = item.getAttribute("data-img") || "";
+      const title = item.getAttribute("data-title") || "";
+      const issuer = item.getAttribute("data-issuer") || "";
+      const role = item.getAttribute("data-role") || "";
+      const date = item.getAttribute("data-date") || "";
+      const cred = item.getAttribute("data-cred") || "";
+
+      // Hover enter: smoothly display preview
+      item.addEventListener("mouseenter", (e) => {
+        if (!previewImg || !previewTitle || !previewRole) return;
+        isHovering = true;
+        previewImg.src = imgUrl;
+        previewTitle.textContent = title;
+        previewRole.textContent = `${role} • ${issuer}`;
+
+        // Initial coordinates placement
+        const previewWidth = 360;
+        const previewHeight = 270;
+        let posX = e.clientX + 24;
+        let posY = e.clientY - previewHeight / 2;
+
+        if (posX + previewWidth > window.innerWidth - 20) {
+          posX = e.clientX - previewWidth - 24;
+        }
+        if (posY < 20) posY = 20;
+        if (posY + previewHeight > window.innerHeight - 20) {
+          posY = window.innerHeight - previewHeight - 20;
+        }
+
+        currentX = posX;
+        currentY = posY;
+        targetX = posX;
+        targetY = posY;
+        previewEl.style.transform = `translate3d(${Math.round(currentX)}px, ${Math.round(currentY)}px, 0)`;
+
+        previewEl.classList.remove("opacity-0", "scale-90");
+        previewEl.classList.add("opacity-100", "scale-100");
+
+        if (!animFrameId) {
+          animFrameId = requestAnimationFrame(updatePosition);
+        }
+      });
+
+      // Hover move: track mouse smoothly
+      item.addEventListener("mousemove", (e) => {
+        const previewWidth = 360;
+        const previewHeight = 270;
+        let posX = e.clientX + 24;
+        let posY = e.clientY - previewHeight / 2;
+
+        if (posX + previewWidth > window.innerWidth - 20) {
+          posX = e.clientX - previewWidth - 24;
+        }
+        if (posY < 20) posY = 20;
+        if (posY + previewHeight > window.innerHeight - 20) {
+          posY = window.innerHeight - previewHeight - 20;
+        }
+
+        targetX = posX;
+        targetY = posY;
+      });
+
+      // Hover leave: smoothly hide preview
+      item.addEventListener("mouseleave", () => {
+        isHovering = false;
+        if (animFrameId) {
+          cancelAnimationFrame(animFrameId);
+          animFrameId = null;
+        }
+        previewEl.classList.remove("opacity-100", "scale-100");
+        previewEl.classList.add("opacity-0", "scale-90");
+      });
+
+      // Click: open modal lightbox
+      item.addEventListener("click", () => {
+        if (!modal || !modalImg) return;
+        modalImg.src = imgUrl;
+        if (modalTitle) modalTitle.textContent = title;
+        if (modalSubtitle) modalSubtitle.textContent = `${role} — ${issuer}`;
+        if (modalDate) modalDate.textContent = `Tanggal / Periode: ${date}`;
+        if (modalCred) modalCred.textContent = cred ? `No. Sertifikat: ${cred}` : "";
+        if (modalOpenLink) modalOpenLink.href = imgUrl;
+        modal.showModal();
+      });
+    });
+  }
+
+  // Support both standard loads and Astro ViewTransitions
+  document.addEventListener("DOMContentLoaded", setupCertificates);
+  document.addEventListener("astro:page-load", setupCertificates);
+</script>
