@@ -33,7 +33,7 @@ const last_posts = posts.slice(0, 3);
 
   <HorizontalCard
     title="TanamanKu"
-    img="/post_img.webp"
+    img="/projects/tanamanku.webp"
     desc="Modern plant care and environmental awareness web platform built with TypeScript, Next.js, and responsive UI components."
     url="https://tanamanku.web.id"
     badge="LIVE"
@@ -41,7 +41,7 @@ const last_posts = posts.slice(0, 3);
   <div class="divider my-0"></div>
   <HorizontalCard
     title="SwaraNusa — Cultural Web & Mobile Platform"
-    img="/post_img.webp"
+    img="/projects/swaranusa-web.webp"
     desc="A digital initiative to preserve Indonesian traditional musical instruments featuring an interactive web portal and a Flutter quiz mobile application."
     url="https://narcobahtml.github.io/SwaraNusa-Web-Project/"
     badge="FEATURED"
@@ -49,7 +49,7 @@ const last_posts = posts.slice(0, 3);
   <div class="divider my-0"></div>
   <HorizontalCard
     title="CTF Writeups & Security Research"
-    img="/post_img.webp"
+    img="/projects/ctf-writeups.webp"
     desc="Curated collection of cybersecurity writeups and exploit scripts across CyLab Academy, TryHackMe, and picoCTF covering Web, Pwn, Crypto, and Forensics."
     url="https://github.com/NarCobahtml/CTF-Writeups"
     badge="CYBERSEC"
@@ -64,7 +64,6 @@ const last_posts = posts.slice(0, 3);
       <>
         <HorizontalCard
           title={post.data.title}
-          img={post.data.heroImage}
           desc={post.data.description}
           url={"/blog/" + createSlug(post.data.title, post.slug)}
           target="_self"
